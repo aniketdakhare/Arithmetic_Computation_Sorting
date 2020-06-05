@@ -8,4 +8,5 @@ read -p "Entar value if 'c'  " c
 echo "a=$a b=$b c=$c"
 
 expression1=$(($a+$b*$c))
-echo $expression
+expression2=$(($a*$b+$c))
+echo "expression1=$expression1 expression2=$expression2"
