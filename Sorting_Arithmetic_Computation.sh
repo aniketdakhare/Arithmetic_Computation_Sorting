@@ -7,9 +7,13 @@ read -p "Enter value of 'b'  " b
 read -p "Entar value if 'c'  " c
 echo "a=$a b=$b c=$c"
 
-expression1=$(($a+$b*$c))
-expression2=$(($a*$b+$c))
-expression3=$(($c+$a/$b))
-expression4=$(($a%$b+$c))
-echo "expression1=$expression1 , expression2=$expression2 , expression3=$expression3 , expression4=$expression4"
+declare -A compute
+compute[exp"0"]=$(($a+$b*$c))
+compute[exp"1"]=$(($a*$b+$c))
+compute[exp"2"]=$(($c+$a/$b))
+compute[exp"3"]=$(($a%$b+$c))
 
+for key in ${!compute[@]}
+do
+   echo " $key : ${compute[$key]}"
+done
