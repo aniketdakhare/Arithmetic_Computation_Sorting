@@ -13,7 +13,10 @@ compute[exp"1"]=$(($a*$b+$c))
 compute[exp"2"]=$(($c+$a/$b))
 compute[exp"3"]=$(($a%$b+$c))
 
+i=0
 for key in ${!compute[@]}
 do
-   echo " $key : ${compute[$key]}"
+	arr[$i]=${compute[$key]}
+	((i++))
 done
+echo Computation result in Array ${arr[@]}
