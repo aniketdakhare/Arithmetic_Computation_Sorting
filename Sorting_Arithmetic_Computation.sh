@@ -7,3 +7,5 @@ read -p "Enter value of 'b'  " b
 read -p "Entar value if 'c'  " c
 echo "a=$a b=$b c=$c"
 
+expression1=$(($a+$b*$c))
+echo $expression
